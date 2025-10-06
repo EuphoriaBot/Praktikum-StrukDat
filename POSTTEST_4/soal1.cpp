@@ -17,7 +17,7 @@ void push(Node *&top, char data)
 char pop(Node *&top)
 {
     if (top == nullptr)
-        return '\0';
+        return '\0'; // Return null character jika stack kosong
     Node *temp = top;
     char poppedValue = temp->data;
     top = top->next;
@@ -30,14 +30,14 @@ string reverseString(string s)
     Node *stackTop = nullptr;
     string reversed = "";
 
-    for (char c : s)
+    for (int i = 0; i < s.length(); i++) // ngeloop tiap karakter dari pertama sampe terakhir
     {
-        push(stackTop, c);
+        push(stackTop, s[i]); // ngemasukin tiap karakter ke dalam stack
     }
 
     while (stackTop != nullptr)
     {
-        reversed = pop(stackTop);
+        reversed += pop(stackTop); // ngeluarkan karakternya baru memasukkan kembali secara di reversed
     }
 
     return reversed;
@@ -47,6 +47,6 @@ int main()
 {
     string text = "Struktur Data";
     cout << "Teks asli: " << text << endl;
-    cout << "Teks terbalik: " << reverseString(text) << endl;
+    cout << "Teks terbalik: " << reverseString(text) << endl; // ataD rukurtS
     return 0;
 }

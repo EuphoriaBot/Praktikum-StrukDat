@@ -23,16 +23,19 @@ void exchangeHeadAndTail(Node *&head_ref)
         head_ref = tail;
         return;
     }
-
+    // simpan node di sebelah head dan tail
     Node *head_next = head->next;
     Node *tail_prev = tail->prev;
 
+    // hubungkan tail_prev dengan head
     tail->next = head_next;
     head_next->prev = tail;
 
+    // hubungkan tail dengan head_next
     head->prev = tail_prev;
     tail_prev->next = head;
 
+    // hubungkan tail dengan head (posisi sudah ditukar)
     head->next = tail;
     tail->prev = head;
 

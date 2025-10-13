@@ -1,0 +1,1 @@
+// perulangan yang gerak ke kiri teruss semala masih ada anak 
